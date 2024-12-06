@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>FEATHER</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="sakura-container"></div>
+<div class="header">
+    <div class="nav__logo-container">
+        <a href="index.html" class="nav__logo">ASOUTHERNCAT</a>
+    </div>
+    <div class="header-title">
+        <span>Feather</span>
+    </div>
+    <nav>
+        <ul class="nav__list">
+            <li><a href="#home">home</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#projects">projects</a></li>
+            <li><a href="#contact">contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="container">
+    <div class="image" id="image1"><img src="images/home/img1.png" alt=""></div>
+    <div class="image" id="image2"><img src="images/home/img2.png" alt=""></div>
+    <div class="image" id="image3"><img src="images/home/img3.png" alt=""></div>
+    <div class="image" id="image4"><img src="images/home/img4.png" alt=""></div>
+    <div class="image" id="image5"><img src="images/home/img5.png" alt=""></div>
+</div>
+
+<main class="main">
+    <section class="home section" id="home">
+        <div class="home__container container grid">
+            <div class="home__content grid">
+                <h1>Hi, I'm<br>ASOUTHERNCAT</h1>
+                <p>High level experience in web design and development knowledge, producing quality work.</p>
+                <a href="#about" class="button">了解更多</a>
+            </div>
+            <div class="home__image">
+                <img src="user/about.jpg" alt="首页图片">
+            </div>
+        </div>
+    </section>
+
+    <section class="about section" id="about">
+        <h2 class="section__title">About Me</h2>
+        <span class="section__subtitle">My Introduction</span>
+
+        <div class="about__container container grid">
+            <img src="images/image3.jpg" alt="About Me" class="about__img" />
+            <div class="about__data">
+                <p class="about__description">world</p>
+                <div class="about__info">
+                    <div>
+                        <span class="about__info-title">00+</span>
+                        <span class="about__info-name">Years of<br>Experience</span>
+                    </div>
+                    <div>
+                        <span class="about__info-title">00+</span>
+                        <span class="about__info-name">Completed<br>Projects</span>
+                    </div>
+                    <div>
+                        <span class="about__info-title">00+</span>
+                        <span class="about__info-name">Companies<br>Worked</span>
+                    </div>
+                </div>
+                <div class="about__buttons">
+                    <a download="" href="assets/pdf/简历.pdf" class="button button--flex">
+                        Download CV
+                        <i class="uil uil-download-alt button__icon"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="project section" id="projects">
+        <h2 class="project__title">Project</h2>
+        <span class="project__subtitle">Personal Project</span>
+
+        <div class="project__container">
+            <div id="game-container">
+                <canvas id="gameCanvas"></canvas>
+                <div id="status">Game not started</div>
+                <img id="not-started-image" src="images/image3.jpg" alt="Game Not Started Image" style="display:none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+            </div>
+            <div id="score">Score: 0</div>
+            <div id="controls-panel">
+                <h2>Game Instructions</h2>
+                <p>Use WASD or arrow keys to control the direction.</p>
+                <p>After the game starts, you can click the "End Game" button or press the space bar to end the game.</p>
+                <button onclick="startGame()" id="startButton">Start Game</button>
+                <label for="speed" id="speedLabel">Select Speed:</label>
+                <select id="speed" onchange="setSpeed(this.value)">
+                    <option value="500">Snail</option>
+                    <option value="300">Worm</option>
+                    <option value="100">Python</option>
+                </select>
+                <div id="controls">
+                    <button onclick="changeDirection('w')">↑</button>
+                    <button onclick="changeDirection('a')">←</button>
+                    <button onclick="changeDirection('s')">↓</button>
+                    <button onclick="changeDirection('d')">→</button>
+                </div>
+                <button onclick="endGame()" id="endButton" class="hidden">End Game</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact section" id="contact">
+        <h2 class="section__title" i18n="contact__title">Contact me</h2>
+        <span class="section__subtitle" i18n="contact__subtitle">Get in touch</span>
+        <div class="contact__container container grid">
+            <div class="contact__information">
+                <i class="uil uil-phone-alt contact__icon"></i>
+                <div class="contact_smallBars"></div> <!-- 确保类名匹配 -->
+                <div>
+                    <h3 class="contact__title" i18n="tel">Call me</h3>
+                    <span class="contact__subtitle" i18n="tel__number">193******63</span>
+                </div>
+            </div>
+            <div class="contact__information">
+                <i class="uil uil-envelope contact__icon"></i>
+
+                <div>
+                    <h3 class="contact__title" i18n="email">E-mail</h3>
+                    <span class="contact__subtitle" i18n="email__address">feather7170@outlook.com</span>
+                </div>
+            </div>
+            <div class="contact__information">
+                <i class="uil uil-map-marker contact__icon"></i>
+
+                <div>
+                    <h3 class="contact__title" i18n="location">Location</h3>
+                    <span class="contact__subtitle" i18n="location__detail">ChongQing , CHINA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 [青羽溪]. 保留所有权利。</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
